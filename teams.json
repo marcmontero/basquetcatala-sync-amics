@@ -1,23 +1,23 @@
 [
   {
-    "name": "OMPLE_AQUI_NOM_AMIC_1",
+    "name": "AEEC Cultural Badalona",
     "club_id": "2402",
     "team_id": "89082",
-    "club_name": "OMPLE_AQUI_NOM_EXACTE_DEL_CLUB",
-    "calendar_id": "OMPLE_AQUI_L_ID_DEL_CALENDARI"
+    "club_name": "AEEC CULTURAL BADALONA",
+    "calendar_id": "b1c4ab361a7134bcf5b5559514fc870f9c5b84f53bde24848cf1a8d4348b1071@group.calendar.google.com"
   },
   {
-    "name": "OMPLE_AQUI_NOM_AMIC_2",
+    "name": "A.E. Sant Andreu Natzaret",
     "club_id": "241",
     "team_id": "89490",
-    "club_name": "OMPLE_AQUI_NOM_EXACTE_DEL_CLUB",
-    "calendar_id": "OMPLE_AQUI_L_ID_DEL_CALENDARI"
+    "club_name": "A.E. SANT ANDREU NATZARET",
+    "calendar_id": "c88c26f249f66aa36d6d369cef3b7c3e158f82ca44cc8e97902c5cd0b9d52f1e@group.calendar.google.com"
   },
   {
-    "name": "OMPLE_AQUI_NOM_AMIC_3",
+    "name": "Bàsquet Palcam",
     "club_id": "169",
     "team_id": "93723",
-    "club_name": "OMPLE_AQUI_NOM_EXACTE_DEL_CLUB",
-    "calendar_id": "OMPLE_AQUI_L_ID_DEL_CALENDARI"
+    "club_name": "BÀSQUET PALCAM",
+    "calendar_id": "7229ee5256e8ca0624bf29d3096919d514adca1472fe5e2766ff784516398d3e@group.calendar.google.com"
   }
 ]
