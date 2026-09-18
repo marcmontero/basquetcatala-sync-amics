@@ -1,9 +1,23 @@
 [
   {
-    "name": "NOM DE L'AMIC O ETIQUETA CURTA",
-    "club_id": "OMPLE_AQUI_EL_CLUB_ID",
-    "team_id": "OMPLE_AQUI_EL_TEAM_ID",
-    "club_name": "NOM EXACTE DEL CLUB TAL COM SURT A LA WEB (per detectar local/visitant)",
+    "name": "OMPLE_AQUI_NOM_AMIC_1",
+    "club_id": "2402",
+    "team_id": "89082",
+    "club_name": "OMPLE_AQUI_NOM_EXACTE_DEL_CLUB",
+    "calendar_id": "OMPLE_AQUI_L_ID_DEL_CALENDARI"
+  },
+  {
+    "name": "OMPLE_AQUI_NOM_AMIC_2",
+    "club_id": "241",
+    "team_id": "89490",
+    "club_name": "OMPLE_AQUI_NOM_EXACTE_DEL_CLUB",
+    "calendar_id": "OMPLE_AQUI_L_ID_DEL_CALENDARI"
+  },
+  {
+    "name": "OMPLE_AQUI_NOM_AMIC_3",
+    "club_id": "169",
+    "team_id": "93723",
+    "club_name": "OMPLE_AQUI_NOM_EXACTE_DEL_CLUB",
     "calendar_id": "OMPLE_AQUI_L_ID_DEL_CALENDARI"
   }
 ]
