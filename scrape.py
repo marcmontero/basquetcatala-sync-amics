@@ -82,7 +82,11 @@ def fetch_rendered_html(context: BrowserContext, url: str, debug_name: str = "fa
             # taula de partits (el contenidor) estigui present. Si l'equip
             # encara no té calendari publicat, la taula hi és però sense
             # cap fila — això no és un error, vol dir 0 partits.
-            page.wait_for_selector("#tbl-clubs-list", timeout=10000)
+            #
+            # Aquest perfil de Chrome és nou (fingerprint sense "historial"
+            # per a la web), i el check necessita més marge que els 10s que
+            # n'hi ha prou al repo del Badalonès per resoldre's sol.
+            page.wait_for_selector("#tbl-clubs-list", timeout=30000)
             page.wait_for_timeout(300)
 
             page.evaluate(
