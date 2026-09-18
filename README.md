@@ -87,6 +87,23 @@ Cada vegada que ho executis, s'obrirà un Chrome (necessita finestra real,
 no funciona en mode headless), sincronitzarà tots els equips de
 `teams.json`, i tancarà sol en acabar.
 
+## Si el check anti-bot no es deixa passar (fallback manual)
+
+Si per a algun equip el check ha escalat a un reCAPTCHA real i
+l'automatització ja no hi passa mai, hi ha una alternativa que no toca la
+web en cap moment:
+
+1. Visita a mà, amb el teu navegador normal, la URL del calendari de
+   l'equip (`.../calendari_equip_global/<club_id>/<team_id>`) i passa la
+   verificació com a persona.
+2. Desa la pàgina (Cmd+Opció+U per veure el codi font i copiar-lo tot, o
+   Cmd+S → "Pàgina web, completa") a un fitxer `.html`.
+3. `python3 sync_from_html.py el_fitxer.html [un_altre.html ...]`
+
+L'script detecta sol a quin equip de `teams.json` correspon cada HTML (pel
+`club_name`) i sincronitza Google Calendar exactament igual que
+`sync_calendar.py`, sense obrir cap Chrome.
+
 ## Execució opcional des de GitHub Actions
 
 Si prefereixes llançar-ho des del botó "Run workflow" de GitHub en comptes
