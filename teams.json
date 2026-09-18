@@ -1,0 +1,9 @@
+[
+  {
+    "name": "NOM DE L'AMIC O ETIQUETA CURTA",
+    "club_id": "OMPLE_AQUI_EL_CLUB_ID",
+    "team_id": "OMPLE_AQUI_EL_TEAM_ID",
+    "club_name": "NOM EXACTE DEL CLUB TAL COM SURT A LA WEB (per detectar local/visitant)",
+    "calendar_id": "OMPLE_AQUI_L_ID_DEL_CALENDARI"
+  }
+]
