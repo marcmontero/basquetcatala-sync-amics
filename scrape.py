@@ -74,6 +74,13 @@ def open_browser_context():
                 "--start-minimized",
                 "--window-position=2000,2000",
             ],
+            # Playwright afegeix per defecte l'indicador --enable-automation,
+            # que fa aparèixer la barra nativa de Chrome "Un software
+            # automatitzat de proves està controlant Chrome". És una senyal
+            # molt visible que alguns sistemes anti-bot detecten, així que la
+            # traiem explícitament (la resta d'indicadors per defecte es
+            # mantenen).
+            ignore_default_args=["--enable-automation"],
             locale="ca-ES",
             timezone_id="Europe/Madrid",
             viewport={"width": 1366, "height": 900},
