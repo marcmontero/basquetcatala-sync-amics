@@ -87,6 +87,30 @@ Cada vegada que ho executis, s'obrirà un Chrome (necessita finestra real,
 no funciona en mode headless), sincronitzarà tots els equips de
 `teams.json`, i tancarà sol en acabar.
 
+## Execució opcional des de GitHub Actions
+
+Si prefereixes llançar-ho des del botó "Run workflow" de GitHub en comptes
+del terminal, hi ha un workflow (`.github/workflows/sync.yml`) que
+**només s'activa manualment** (no té cap `schedule`). Com que la web
+bloqueja peticions des de servidors al núvol i necessita un Chrome amb
+finestra real, encara cal un "self-hosted runner" al teu Mac (igual que
+al repo del Badalonès, però registrat expressament per a AQUEST repo —
+cada repo necessita el seu propi runner):
+
+1. Al repo: **Settings → Actions → Runners → New self-hosted runner**,
+   tria macOS i segueix els passos (Download + Configure) amb el token
+   que et doni GitHub.
+2. Instal·la'l com a servei (`./svc.sh install` i `./svc.sh start`, sense
+   `sudo`) perquè quedi actiu en segon pla, o simplement deixa'l corrent
+   en un Terminal obert si només el faràs servir de tant en tant.
+3. **Settings → Secrets and variables → Actions**, crea el secret
+   `GOOGLE_CREDENTIALS_JSON` amb tot el contingut del teu
+   `credentials.json`.
+4. Pestanya **Actions** → "Sync calendaris (amics)" → **Run workflow**.
+
+Si només ho executes de tant en tant, no cal que el runner estigui actiu
+tota l'estona: l'arrenques abans de llançar el workflow i l'atures després.
+
 ## Configuració opcional
 
 Variables d'entorn:
