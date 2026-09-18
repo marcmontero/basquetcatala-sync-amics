@@ -42,12 +42,31 @@ class Match:
     venue_address: str
 
 
+CHROME_PROFILE_DIR = os.environ.get(
+    "CHROME_PROFILE_DIR",
+    os.path.expanduser("~/.cache/basquetcatala-sync-amics-chrome-profile"),
+)
+
+
 @contextmanager
 def open_browser_context():
-    """Obre un únic Chrome real (no headless) amb pedaços stealth, reutilitzable
-    per fer-hi diverses pestanyes (una per equip)."""
+    """Obre un Chrome real (no headless) amb un PERFIL PERSISTENT (cookies
+    incloses entre execucions) i pedaços stealth, reutilitzable per fer-hi
+    diverses pestanyes (una per equip).
+
+    Fem servir un perfil persistent (en comptes d'un context nou en memòria
+    cada vegada) perquè si mai cal resoldre un repte anti-bot MANUALMENT una
+    vegada (obrint aquest mateix perfil amb un Chrome normal, no automatitzat),
+    la cookie de confiança que en resulti es reutilitzi automàticament en les
+    properes execucions del script, en comptes de perdre's a cada run.
+
+    El perfil viu FORA del checkout del repo (per defecte a
+    ~/.cache/...), perquè `actions/checkout` neteja el directori de treball
+    a cada execució del workflow i esborraria un perfil que hi fos a dins.
+    """
     with sync_playwright() as p:
-        browser = p.chromium.launch(
+        context = p.chromium.launch_persistent_context(
+            CHROME_PROFILE_DIR,
             channel="chrome",
             headless=False,
             args=[
@@ -55,8 +74,6 @@ def open_browser_context():
                 "--start-minimized",
                 "--window-position=2000,2000",
             ],
-        )
-        context = browser.new_context(
             locale="ca-ES",
             timezone_id="Europe/Madrid",
             viewport={"width": 1366, "height": 900},
@@ -66,7 +83,7 @@ def open_browser_context():
         try:
             yield context
         finally:
-            browser.close()
+            context.close()
 
 
 def fetch_rendered_html(context: BrowserContext, url: str, debug_name: str = "failure") -> str:
